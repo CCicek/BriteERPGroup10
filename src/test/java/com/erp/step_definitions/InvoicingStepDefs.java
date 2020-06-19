@@ -15,11 +15,17 @@ public class InvoicingStepDefs {
         invoicingPage.navigateTo(moduleName);
     }
 
+
     @Then("the system should display {string} subtitle")
     public void the_system_should_display_subtitle(String expectedSubtitle) {
         String actualPageSubTitle = invoicingPage.getPageSubTitle();
         System.out.println("actualPageSubTitle = " + actualPageSubTitle);
         Assert.assertEquals("Verify the page subtitle", expectedSubtitle,actualPageSubTitle );
+    }
+
+    @When("the user navigates to tab {string} and {string}")
+    public void the_user_navigates_to_tab_and(String tabName, String subTabName) {
+        invoicingPage.navigateToTab(tabName, subTabName);
     }
 
 
