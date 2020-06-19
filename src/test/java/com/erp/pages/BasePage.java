@@ -27,7 +27,6 @@ public abstract class BasePage {
     public void navigateTo(String modul) {
         String locator = "(//span[normalize-space()='"+modul+"' and @class='oe_menu_text'])[1]";
         BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath(locator)));
-        waitTheTitleContains(modul);
     }
 
 
