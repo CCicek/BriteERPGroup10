@@ -1,5 +1,6 @@
 package com.erp.step_definitions;
 
+import com.erp.pages.InvoicingPage;
 import com.erp.pages.LoginPage;
 import com.erp.utilities.BrowserUtils;
 import com.erp.utilities.ConfigurationReader;
@@ -15,6 +16,7 @@ public class Loginstepdef {
     public void user_login_with_right_and(String string, String string2) {
         Driver.get().get(ConfigurationReader.get("url"));
         loginPage.Login(string,string2);
+        loginPage.waitTheTitleContains("Inbox");
     }
 
     @Then("use must see title as {string}")
