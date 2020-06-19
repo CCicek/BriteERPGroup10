@@ -4,7 +4,7 @@ Feature: User must use notes functionality
   Background:
     When user in the main page
     Then user must click to "Notes"
-@www
+
   Scenario: User must able to create note
     And user click to create button
     Then user able to write "WritingTest1" in writepad
