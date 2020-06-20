@@ -1,4 +1,3 @@
-
 Feature: Invoicing Functionality
 
   Background:
@@ -9,7 +8,7 @@ Feature: Invoicing Functionality
   Scenario: Navigating to Invoicing Module
     Then the system should display "Customer Invoices" subtitle
 
-  @wip
+
   Scenario Outline: Navigating to <subTabName> tab under <tabName>
     When the user navigates to tab "<tabName>" and "<subTabName>"
     Then the system should display "<subTabName>" subtitle
@@ -26,3 +25,11 @@ Feature: Invoicing Functionality
       | Vendors               | Purchases |
       | Purchasable Products  | Purchases |
 
+  @wip
+  Scenario: Creating a new Customer Invoice
+    When the user creates a new Customer Invoice using following info
+      | Customer Name | ABC Company, Jonny Cash |
+      | Payment Type  | cash                    |
+      | Invoice date  | 06/06/2020              |
+      | Product Name  | iphonex                 |
+    Then the user should see the "Invoice Created" message
