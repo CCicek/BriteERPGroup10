@@ -38,6 +38,8 @@ public abstract class BasePage {
         new WebDriverWait(Driver.get(),10).until(ExpectedConditions.titleContains(title));
     }
 
-    public String getPageSubTitle(){return pageSubTitle.getText();}
+    public String getPageSubTitle(){
+        return pageSubTitle.getText();
+    }
 
 }
