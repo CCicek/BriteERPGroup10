@@ -1,4 +1,4 @@
-Feature: Invoicing Functionality
+  Feature: Invoicing Functionality
 
   Background:
     When user login with right "usernameSM1" and "passwordSM"

@@ -21,9 +21,6 @@ public abstract class BasePage {
     public WebElement pageSubTitle;
 
 
-
-
-
     public void navigateTo(String modul) {
         String locator = "(//span[normalize-space()='"+modul+"' and @class='oe_menu_text'])[1]";
         BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath(locator)));
@@ -39,5 +36,18 @@ public abstract class BasePage {
     }
 
     public String getPageSubTitle(){return pageSubTitle.getText();}
+
+
+    public String getPageTitle(String moduleName){
+
+        BrowserUtils.waitFor(1);
+
+        String titlePath="//li[contains(text(),'"+moduleName+"') and contains(@class,'active')]";
+
+        String titleStr = Driver.get().findElement(By.xpath(titlePath)).getText();
+
+        return titleStr;
+    }
+
 
 }
