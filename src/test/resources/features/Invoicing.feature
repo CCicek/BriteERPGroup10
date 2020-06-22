@@ -25,7 +25,7 @@
       | Vendors               | Purchases |
       | Purchasable Products  | Purchases |
 
-  @wip
+
   Scenario: Creating a new Customer Invoice
     When the user creates a new Customer Invoice using following info
       | Customer Name | ABC Company, Jonny Cash |
