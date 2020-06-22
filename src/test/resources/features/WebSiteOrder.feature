@@ -6,7 +6,5 @@ Feature: User enters Website section
     When the user navigates to module "Website"
     Then the system should display "Dashboard" subtitle
 
-  #Scenario: To create quatation/customer
-  #  When user clicks the create button
-  #  Then user fills the following blanks
-  #    | Customer | Invoice Adress | Delivery Adress | Expiration Date | Pricelist | Payment Terms |
+  # here we go to our project main page then go to webpage section...
+  # then we see subtitle..
