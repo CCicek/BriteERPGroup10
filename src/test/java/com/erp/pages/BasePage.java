@@ -41,4 +41,13 @@ public abstract class BasePage {
 
     public String getPageSubTitle(){return pageSubTitle.getText();}
 
+
+    public void navigateToModules(String modules) {
+
+        String xpath = "//ul[@class='nav navbar-nav navbar-left oe_application_menu_placeholder']//span[normalize-space(text())='"+modules+"']";
+
+        Driver.get().findElement(By.xpath(xpath)).click();
+
+    }
+
 }
