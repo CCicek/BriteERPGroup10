@@ -1,5 +1,7 @@
 package com.erp.pages;
 
+import com.erp.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -40,6 +42,19 @@ public class WebSitePage extends BasePage{
 
     @FindBy(id = "o_field_input_440")
     public WebElement newPricelist;
+
+    public void navigateToTab(String tabName, String subTabName){
+
+        lastWeek.click();
+        lastMonth.click();
+        lastYear.click();
+
+        String xpath = "//div[normalize-space()='"+tabName+"']/following-sibling::ul[1]//span[normalize-space()='"+subTabName+"']";
+        Driver.get().findElement(By.xpath(xpath)).click();
+
+        waitTheTitleContains(subTabName);
+    }
+
 
 
 
