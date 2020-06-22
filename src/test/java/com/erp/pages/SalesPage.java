@@ -27,4 +27,10 @@ public class SalesPage extends BasePage{
     @FindBy(css = ".fa.fa-chevron-right")
     public WebElement nextBtn;
 
+    @FindBy(css = ".o_notification_title")
+    public WebElement notificationTitle;
+
+    @FindBy(css = ".o_notification_content")
+    public WebElement notificationContent;
+
 }
