@@ -1,6 +1,6 @@
 Feature: Sales Modules Behaviours
 
-  Scenario: Navigating to Sales Module
+  Scenario: Navigating to Website Module
     When user login with right "usernameSM1" and "passwordSM"
     When the user navigates to module "Invoicing"
     Then the system should display "Sales" subtitle
