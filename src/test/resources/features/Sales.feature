@@ -1,4 +1,6 @@
+@sales
 Feature: Sales Modules Behaviours
+
 
   Background:
     Given user login with right "usernameSM1" and "passwordSM"
@@ -6,6 +8,7 @@ Feature: Sales Modules Behaviours
 
   Scenario: Navigating to Sales Module
     Then the system should display the "Quotations" subtitle
+
 
   @sales
   Scenario: To create quatation/customer
