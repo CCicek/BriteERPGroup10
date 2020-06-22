@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features/",
         glue = "com/erp/step_definitions",
-        dryRun = true,
-        tags = "@website_modules"
-
+        dryRun = false,
+       // tags = "@website_modules"
+                tags = "@www"
         )
 public class CukesRunner {
 }
