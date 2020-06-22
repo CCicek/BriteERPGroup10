@@ -2,7 +2,7 @@
 Feature: User enters Website section
 
   Scenario: Navigating to Website Module
-    When user login with right "usernameSM1" and "passwordSM"
+    When user login with right "usernamePM3" and "password"
     When the user navigates to module "Website"
     Then the system should display "Dashboard" subtitle
 

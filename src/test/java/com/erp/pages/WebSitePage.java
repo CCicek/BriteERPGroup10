@@ -6,8 +6,7 @@ import org.openqa.selenium.support.FindBy;
 public class WebSitePage extends BasePage{
 
     // in this page i defined locators of website section..but the page is strange my friends..
-    //anlayan beri gelsin..who can understand come closer guys
-    // non facile amici..
+
 
     @FindBy(xpath = "//span[contains(text(),'Website')]")
     public WebElement websiteBut;
