@@ -1,3 +1,4 @@
+@sales
 Feature: Sales Modules Behaviours
 
   Scenario: Navigating to Website Module
