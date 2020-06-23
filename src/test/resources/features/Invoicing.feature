@@ -1,4 +1,5 @@
-  Feature: Invoicing Functionality
+
+Feature: Invoicing Functionality
 
   Background:
     When user login with right "usernameSM1" and "passwordSM"
@@ -8,7 +9,7 @@
   Scenario: Navigating to Invoicing Module
     Then the system should display "Customer Invoices" subtitle
 
-@wip
+  @wip
   Scenario Outline: Navigating to <subTabName> tab under <tabName>
     When the user navigates to tab "<tabName>" and "<subTabName>"
     Then the system should display "<subTabName>" subtitle
