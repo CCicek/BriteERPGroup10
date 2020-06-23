@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CRMPage extends BasePage {
-    //create button
+    //create button enter
     @FindBy(xpath = "(//button[@class='btn btn-primary btn-sm o-kanban-button-new'])")
     public WebElement create;
 
