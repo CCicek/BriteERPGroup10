@@ -1,5 +1,5 @@
 Feature: User must login
-
+  @wip
   Scenario: user must login right credentials
     When user login with right "usernameSM1" and "passwordSM"
     Then use must see title as "#Inbox - Odoo"
