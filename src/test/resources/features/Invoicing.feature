@@ -9,7 +9,6 @@ Feature: Invoicing Functionality
   Scenario: Navigating to Invoicing Module
     Then the system should display "Customer Invoices" subtitle
 
-
   Scenario Outline: Navigating to <subTabName> tab under <tabName>
     When the user navigates to tab "<tabName>" and "<subTabName>"
     Then the system should display "<subTabName>" subtitle
