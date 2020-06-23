@@ -5,11 +5,10 @@ Feature: Invoicing Functionality
     When user login with right "usernameSM1" and "passwordSM"
     When the user navigates to module "Invoicing"
 
-
+  @wip
   Scenario: Navigating to Invoicing Module
     Then the system should display "Customer Invoices" subtitle
 
-  @wip
   Scenario Outline: Navigating to <subTabName> tab under <tabName>
     When the user navigates to tab "<tabName>" and "<subTabName>"
     Then the system should display "<subTabName>" subtitle
@@ -26,7 +25,7 @@ Feature: Invoicing Functionality
       | Vendors               | Purchases |
       | Purchasable Products  | Purchases |
 
-  @wip
+
   Scenario: Creating a new Customer Invoice
     When the user creates a new Customer Invoice using following info
       | Customer Name | ABC Company, Jonny Cash |
