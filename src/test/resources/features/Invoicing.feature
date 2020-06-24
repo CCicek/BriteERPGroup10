@@ -5,7 +5,7 @@ Feature: Invoicing Functionality
     When user login with right "usernameSM1" and "passwordSM"
     When the user navigates to module "Invoicing"
 
-  @wip
+
   Scenario: Navigating to Invoicing Module
     Then the system should display "Customer Invoices" subtitle
 
