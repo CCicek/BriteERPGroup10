@@ -7,6 +7,10 @@ Feature: WebSite module testing part2
     Given user login with right "usernamePM3" and "password"
     When the user navigates to the module. "Website"
 
+  Scenario: Navigating to Website Module
+    Then the system should display the "Dashboard" subtitle.
+    #And user click Order button
+
 
 
 

@@ -59,7 +59,17 @@ public class WebSiteStepDef {
         Assert.assertTrue(actualTableTitle.contains(tableButton));
 
     }
+    @Then("the system should display the {string} subtitle.")
+    public void the_system_should_display_the_subtitle(String expectedSubtitle) {
+        WebSitePage webSitePage = new WebSitePage();
+        String actualPageSubtitle = webSitePage.getPageSubTitle();
+        System.out.println("expectedSubtitle = " + expectedSubtitle);
+        Assert.assertEquals("verify the page subtitle", expectedSubtitle,actualPageSubtitle);
 
+    }
 
 
 }
+
+
+
