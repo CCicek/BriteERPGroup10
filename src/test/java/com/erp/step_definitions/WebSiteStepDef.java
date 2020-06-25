@@ -19,12 +19,11 @@ public class WebSiteStepDef {
 
     @When("the user navigates to the button {string}")
     public void the_user_navigates_to_button(String LastWeek) {
-        //SalesPage salesPage = new SalesPage();
-        //webSitePage.(LastWeek);
-        //new WebDriverWait(Driver.get(),10).until(ExpectedConditions.titleContains("Sales Since Last Week"));
+
         webSitePage.lastWeek.click();
 
     }
+
     @Then("the system should display the {string} table title")
     public void the_system_should_display_the_table_title(String expectedTableTitle) {
         BrowserUtils.waitFor(2);
@@ -32,14 +31,15 @@ public class WebSiteStepDef {
 
         System.out.println("actualTableTitle = " + actualTableTitle);
 
-        Assert.assertEquals(expectedTableTitle,actualTableTitle);
+        Assert.assertEquals(expectedTableTitle, actualTableTitle);
 
 
     }
-    @When("the user navigates to the module. {string}")
-    public void the_user_navigates_to_the_module(String moduleName) {
 
-        webSitePage.navigateTo(moduleName);
+    @When("the user navigates to the module. {string}")
+    public void the_user_navigates_to_the_module(String Orders) {
+
+        webSitePage.navigateTo(Orders);
         BrowserUtils.waitFor(3);
     }
 
@@ -59,17 +59,26 @@ public class WebSiteStepDef {
         Assert.assertTrue(actualTableTitle.contains(tableButton));
 
     }
+
     @Then("the system should display the {string} subtitle.")
     public void the_system_should_display_the_subtitle(String expectedSubtitle) {
         WebSitePage webSitePage = new WebSitePage();
         String actualPageSubtitle = webSitePage.getPageSubTitle();
         System.out.println("expectedSubtitle = " + expectedSubtitle);
-        Assert.assertEquals("verify the page subtitle", expectedSubtitle,actualPageSubtitle);
+        Assert.assertEquals("verify the page subtitle", expectedSubtitle, actualPageSubtitle);
 
     }
 
+    @Then("user click goes to Order-Create section")
+    public void user_click_Order_button() {
+        webSitePage.ordersBut1.click();
+        BrowserUtils.waitFor(2);
+        webSitePage.ordersCreateBut.click();
+        BrowserUtils.waitFor(2);
+
+
+
+    }
 
 }
-
-
 

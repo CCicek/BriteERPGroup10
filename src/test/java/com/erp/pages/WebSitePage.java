@@ -32,6 +32,9 @@ public class WebSitePage extends BasePage{
     @FindBy(xpath = "//li[@class='active']//span[@class='oe_menu_text'][contains(text(),'Orders')]")
     public WebElement ordersBut;
 
+    @FindBy(css = "body > div.o_main > div.o_sub_menu > div.o_sub_menu_content > div:nth-child(7) > ul:nth-child(3) > li.active > a > span")
+    public WebElement ordersBut1;
+
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_list_button_add']")
     public WebElement ordersCreateBut;
 
