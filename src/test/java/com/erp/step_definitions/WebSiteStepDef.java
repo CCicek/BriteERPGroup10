@@ -132,13 +132,15 @@ public class WebSiteStepDef {
 
         webSitePage.orderLink.click();
 
-
-
     }
 
     @Then("user click {string} button")
     public void user_click_button(String string) {
         webSitePage.ordersCreateBut.click();
+
+    }
+    @Then("user create new order")
+    public void user_create_new_order() {
 
     }
 
