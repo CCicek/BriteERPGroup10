@@ -7,9 +7,9 @@ Feature: WebSite module testing part2
   #Background:
    # Given user login with right "usernamePM3" and "password"
    # When the user navigates to the module. "Website"
-  @wip12
+  @wip123
 
-  Scenario: To create Website/order
+  Scenario: To create Website order
     Given user login with true "usernamePM3" and "password"
     When user enter "Website" module
     And user open "Order" page
