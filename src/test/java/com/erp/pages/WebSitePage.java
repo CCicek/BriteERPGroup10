@@ -29,8 +29,11 @@ public class WebSitePage extends BasePage{
     @FindBy(xpath = "//button[contains(text(),'Last Year')]")
     public WebElement lastYear;
 
-    @FindBy(xpath = "//li[@class='active']//span[@class='oe_menu_text'][contains(text(),'Orders')]")
+    @FindBy(xpath = "(//span[@class='oe_menu_text'][contains(text(),'Orders')])[5]")
     public WebElement ordersBut;
+
+    @FindBy(linkText = "Orders")
+    public WebElement orderLink;
 
     @FindBy(css = "body > div.o_main > div.o_sub_menu > div.o_sub_menu_content > div:nth-child(7) > ul:nth-child(3) > li.active > a > span")
     public WebElement ordersBut1;
@@ -71,6 +74,7 @@ public class WebSitePage extends BasePage{
         Driver.get().findElement(By.xpath(xpath)).click();
         BrowserUtils.waitFor(1);
     }
+
 
 }
 

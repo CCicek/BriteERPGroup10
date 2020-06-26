@@ -14,6 +14,7 @@ Feature: WebSite module testing part2
     When user enter "Website" module
     And user open "Order" page
     Then user click "Create" button
+    Then user create new order
 
 
 
