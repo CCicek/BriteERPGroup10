@@ -115,14 +115,14 @@ public class WebSiteStepDef {
 
     @When("user enter {string} module")
     public void user_enter_module(String expectedSubtitle) {
+        BrowserUtils.waitFor(3);
+        webSitePage.navigateToModules("Website");
 
-        WebSitePage webSitePage = new WebSitePage();
-
-        webSitePage.websiteBut.click();
+        /*webSitePage.websiteBut.click();
         String actualPageSubtitle = webSitePage.getPageSubTitle();
         expectedSubtitle = "Dashboard";
         System.out.println("expectedSubtitle = " + expectedSubtitle);
-        Assert.assertEquals("verify the page subtitle", expectedSubtitle, actualPageSubtitle);
+        Assert.assertEquals("verify the page subtitle", expectedSubtitle, actualPageSubtitle);*/
 
 
     }
@@ -130,10 +130,15 @@ public class WebSiteStepDef {
     @When("user open {string} page")
     public void user_open_page(String string) {
 
+        webSitePage.orderLink.click();
+
+
+
     }
 
     @Then("user click {string} button")
     public void user_click_button(String string) {
+        webSitePage.ordersCreateBut.click();
 
     }
 
