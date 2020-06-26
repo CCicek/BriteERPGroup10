@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "com/erp/step_definitions",
         dryRun = false,
      //tags = "@website_modules"
-        tags = "@wip1"
+        tags = "@wip12"
 )
 public class CukesRunner {
 }

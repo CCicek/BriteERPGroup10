@@ -71,14 +71,28 @@ public class WebSiteStepDef {
 
     @Then("user click goes to Order-Create section")
     public void user_click_Order_button() {
-        webSitePage.ordersBut1.click();
+        WebSitePage webSitePage = new WebSitePage();
+        webSitePage.ordersBut.click();
         BrowserUtils.waitFor(2);
         webSitePage.ordersCreateBut.click();
         BrowserUtils.waitFor(2);
 
+    }
+
+    @When("user clicks the create button.")
+    public void user_clicks_the_create_button() {
+        WebSitePage webSitePage = new WebSitePage();
+        webSitePage.ordersCreateBut.click();
+        BrowserUtils.waitFor(2);
+
+    }
+
+    @When("user fills the following blanks.")
+    public void user_fills_the_following_blanks() {
 
 
     }
+
 
 }
 

@@ -7,14 +7,15 @@ Feature: Website module testing
     Given user login with right "usernamePM3" and "password"
     When the user navigates to the module. "Website"
 #with this scenario we navigate to website module
+ @wip
   Scenario: Navigating to Website Module
-    Then the system should display the "Dashboard - Odoo" subtitle
+    Then the system should display the "Dashboard" subtitle
 
 
   Scenario: Navigating to Last Week Button
     When the user navigates to the button "Last Week"
     Then the system should display the "SALES SINCE LAST WEEK" table title
-@wip
+
   Scenario Outline: Clicking to <table button>
     When user click "<table button>"
     Then the table title should contain "<table button>"
