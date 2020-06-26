@@ -1,15 +1,20 @@
 package com.erp.step_definitions;
 
 import com.erp.pages.InvoicingPage;
+import com.erp.pages.LoginPage;
 import com.erp.pages.SalesPage;
 import com.erp.pages.WebSitePage;
 import com.erp.utilities.BrowserUtils;
+import com.erp.utilities.ConfigurationReader;
 import com.erp.utilities.Driver;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sun.awt.windows.WEmbeddedFrame;
 
 import java.util.List;
 
@@ -37,9 +42,9 @@ public class WebSiteStepDef {
     }
 
     @When("the user navigates to the module. {string}")
-    public void the_user_navigates_to_the_module(String Orders) {
+    public void the_user_navigates_to_the_module(String Website) {
 
-        webSitePage.navigateTo(Orders);
+        webSitePage.navigateTo(Website);
         BrowserUtils.waitFor(3);
     }
 
@@ -69,13 +74,13 @@ public class WebSiteStepDef {
 
     }
 
-    @Then("user click goes to Order-Create section")
+    @Then("user click Order button")
     public void user_click_Order_button() {
         WebSitePage webSitePage = new WebSitePage();
         webSitePage.ordersBut.click();
         BrowserUtils.waitFor(2);
-        webSitePage.ordersCreateBut.click();
-        BrowserUtils.waitFor(2);
+        //webSitePage.ordersCreateBut.click();
+       // BrowserUtils.waitFor(2);
 
     }
 
@@ -92,6 +97,51 @@ public class WebSiteStepDef {
 
 
     }
+    @Given("user login with true {string} and {string}")
+    public void user_login_with_true_and(String userName, String password, String expectedSubtitle) {
+
+        //STEP_1 login to system
+        // there is login method but i wrote here extra..
+        // check LoginStepDef for better understanding
+
+        Driver.get().get(ConfigurationReader.get("url"));
+        BrowserUtils.waitFor(2);
+        LoginPage loginPage = new LoginPage();
+        WebSitePage webSitePage = new WebSitePage();
+
+        loginPage.userName.sendKeys(ConfigurationReader.get("usernamePM3"));
+        loginPage.password.sendKeys(ConfigurationReader.get("password"));
+        loginPage.loginButton.click();
+        //STEP 2 go to WebSite Module
+        // now we go to WebSite module
+
+        webSitePage.websiteBut.click();
+        String actualPageSubtitle = webSitePage.getPageSubTitle();
+        expectedSubtitle = "WebSite";
+        System.out.println("expectedSubtitle = " + expectedSubtitle);
+        Assert.assertEquals("verify the page subtitle", expectedSubtitle, actualPageSubtitle);
+
+
+
+
+    }
+
+    @When("user enter {string} module")
+    public void user_enter_module(String string) {
+
+
+    }
+
+    @When("user open {string} page")
+    public void user_open_page(String string) {
+
+    }
+
+    @Then("user click {string} button")
+    public void user_click_button(String string) {
+
+    }
+
 
 
 }

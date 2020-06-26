@@ -3,14 +3,19 @@
 
 Feature: WebSite module testing part2
   #this part describes to login system and goes to website modules
-  Background:
-    Given user login with right "usernamePM3" and "password"
-    When the user navigates to the module. "Orders"
+
+  #Background:
+   # Given user login with right "usernamePM3" and "password"
+   # When the user navigates to the module. "Website"
   @wip12
 
   Scenario: To create Website/order
-    And user clicks the create button.
-    And user fills the following blanks.
+    Given user login with true "usernamePM3" and "password"
+    When user enter "Website" module
+    And user open "Order" page
+    Then user click "Create" button
+
+
 
 
 
