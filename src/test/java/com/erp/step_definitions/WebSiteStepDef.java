@@ -120,7 +120,7 @@ public class WebSiteStepDef {
 
         webSitePage.websiteBut.click();
         String actualPageSubtitle = webSitePage.getPageSubTitle();
-        expectedSubtitle = "Dashboard";
+        expectedSubtitle = "Dashbo";
         System.out.println("expectedSubtitle = " + expectedSubtitle);
         Assert.assertEquals("verify the page subtitle", expectedSubtitle, actualPageSubtitle);
 
