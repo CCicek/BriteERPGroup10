@@ -22,17 +22,19 @@ public class DiscussStepDefs {
     public void user_clicks_the_add_channel_button() {
         DiscussPage discussPage = new DiscussPage();
         discussPage.addButton.click();
-        BrowserUtils.waitFor(2);
+
         discussPage.addChannel.sendKeys("Channel 10");
         discussPage.channel10.click();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
 
     }
 
     @Then("new channel should be displayed {string} under channels")
     public void new_channel_should_be_displayed_under_channels(String expectedChannel) {
         DiscussPage discussPage = new DiscussPage();
+        String actualChannel = discussPage.channel10.getAttribute("title");
 
+        Assert.assertEquals(expectedChannel,actualChannel);
 
 
     }

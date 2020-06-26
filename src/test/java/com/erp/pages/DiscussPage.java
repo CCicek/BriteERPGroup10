@@ -11,7 +11,7 @@ public class DiscussPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Add a channel']")
     public WebElement addChannel;
 
-    @FindBy(xpath = "//em[contains(text(),'\"#Channel 10\"')]")
+    @FindBy(xpath = "//*[@title='Channel 10']")
     public WebElement channel10;
 
 
