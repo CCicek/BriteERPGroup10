@@ -35,6 +35,7 @@ public class DiscussStepDefs {
         String actualChannel = discussPage.channel10.getAttribute("title");
 
         Assert.assertEquals(expectedChannel,actualChannel);
+        //practice
 
 
     }
