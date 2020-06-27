@@ -21,6 +21,7 @@ public abstract class BasePage {
     public WebElement pageSubTitle;
 
 
+
     public void navigateTo(String modul) {
         String locator = "(//span[normalize-space()='"+modul+"' and @class='oe_menu_text'])[1]";
         BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath(locator)));
@@ -35,7 +36,19 @@ public abstract class BasePage {
         new WebDriverWait(Driver.get(),10).until(ExpectedConditions.titleContains(title));
     }
 
-    public String getPageSubTitle(){return pageSubTitle.getText();}
+    public String getPageSubTitle() {
+        return pageSubTitle.getText();
+    }
+
+
+
+    public void navigateToModules(String modules) {
+
+        String xpath = "//ul[@class='nav navbar-nav navbar-left oe_application_menu_placeholder']//span[normalize-space(text())='"+modules+"']";
+
+        Driver.get().findElement(By.xpath(xpath)).click();
+
+    }
 
 
     public String getPageSubTitle(String moduleName){
@@ -48,6 +61,7 @@ public abstract class BasePage {
 
         return titleStr;
     }
+
 
 
 }
