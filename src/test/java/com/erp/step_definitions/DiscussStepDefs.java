@@ -9,10 +9,11 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 public class DiscussStepDefs {
+    DiscussPage discussPage = new DiscussPage();
 
     @Then("the page should have the title {string}")
     public void the_page_should_have_the_title(String expectedTitle) {
-        DiscussPage discussPage = new DiscussPage();
+
         System.out.println("Driver.get().getTitle() = " + Driver.get().getTitle());
         Assert.assertEquals(expectedTitle, Driver.get().getTitle());
 
@@ -20,7 +21,7 @@ public class DiscussStepDefs {
 
     @When("user clicks the add channel button")
     public void user_clicks_the_add_channel_button() {
-        DiscussPage discussPage = new DiscussPage();
+
         discussPage.addButton.click();
 
         discussPage.addChannel.sendKeys("Channel 10");
@@ -31,13 +32,31 @@ public class DiscussStepDefs {
 
     @Then("new channel should be displayed {string} under channels")
     public void new_channel_should_be_displayed_under_channels(String expectedChannel) {
-        DiscussPage discussPage = new DiscussPage();
+
         String actualChannel = discussPage.channel10.getAttribute("title");
 
         Assert.assertEquals(expectedChannel,actualChannel);
         //practice
 
 
+    }
+    @When("user clicks direct message button sent to {string}")
+    public void user_clicks_direct_message_button_sent_to(String send) {
+        discussPage.clickmessageButton.click();
+        BrowserUtils.waitFor(1);
+        discussPage.sendTo.sendKeys(send+Keys.TAB+Keys.ENTER);
+        BrowserUtils.waitFor(1);
+
+    }
+
+    @Then("direct message should be {string}")
+    public void direct_message_should_be(String expectedTitle) {
+
+        String actualTitle = discussPage.message.getAttribute("title");
+        System.out.println("actualTitle = " + actualTitle);
+        System.out.println("expectedTitle = " + expectedTitle);
+
+        Assert.assertEquals(expectedTitle,actualTitle);
     }
 
 

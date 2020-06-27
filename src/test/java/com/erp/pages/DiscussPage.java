@@ -22,6 +22,27 @@ public class DiscussPage extends BasePage {
     @FindBy(xpath = "//input[@xpath='1']")
     public WebElement directMessages;
 
+    @FindBy(xpath = "//div[@class='o_main_content']//div[8]//span[1]")
+    public WebElement clickmessageButton;
+
+    @FindBy(xpath = "//input[@placeholder='User name']")
+    public WebElement sendTo;
+
+    @FindBy(xpath = "//*[@title='EventsCRMManager101']")
+    public WebElement message;
+
+    @FindBy(xpath = "//textarea[@xpath='1']")
+    public WebElement textMessage;
+
+    @FindBy(xpath = "//button[@xpath='5']")
+    public WebElement attachment;
+
+    @FindBy(xpath = "//button[@tabindex='4']")
+    public WebElement emoji;
+
+    @FindBy(xpath = "//button[@tabindex='3']")
+    public WebElement sendButton;
+
 }
 
 
