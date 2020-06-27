@@ -51,7 +51,7 @@ public abstract class BasePage {
     }
 
 
-    public String getPageTitle(String moduleName){
+    public String getPageSubTitle(String moduleName){
 
         BrowserUtils.waitFor(1);
 
