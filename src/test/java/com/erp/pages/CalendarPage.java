@@ -13,10 +13,11 @@ public class CalendarPage extends BasePage {
     public List<WebElement> daysOfWeek;
 
 
-    public void calenderRange(String range){
+    public void dateRange(String range){
 
-        String rangePath="button.o_calendar_button_"+range;
-        Driver.get().findElement(By.cssSelector(rangePath)).click();
+        String rangePath="//button[.='"+range+"']";
+
+        Driver.get().findElement(By.xpath(rangePath)).click();
     }
 
 
