@@ -33,3 +33,14 @@ Feature: Invoicing Functionality
       | Invoice date  | 06/06/2020              |
       | Product Name  | iphonex                 |
     Then the user should see the "Invoice Created" message
+
+  @wip
+  Scenario: Creating a new customer
+    When the user navigates to tab "Sales" and "Customers"
+    And the user creates a new customer with the following information
+      | fullName | Johnny Cooper     |
+      | address1 | NewCity Avenue    |
+      | address2 | Old School street |
+      | city     | Mexico City       |
+    Then the customer name should be displayed next to page subtitle "Johnny Cooper"
+

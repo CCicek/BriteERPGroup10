@@ -47,6 +47,9 @@ public class InvoicingPage extends BasePage{
     @FindBy (css = ".o_thread_message_content>p")
     public WebElement invoiceCreated;
 
+    @FindBy (xpath = "//ol//a[text()='Customers']/../following-sibling::li")
+    public WebElement createdCustomer;
+
 
 
 
@@ -64,6 +67,7 @@ public class InvoicingPage extends BasePage{
     }
 
     public List<String> getCustomerInvoicesTableRows(){
+        BrowserUtils.waitFor(2);
         return BrowserUtils.getElementsText(customerInvoicesTableRows);
 
     }
