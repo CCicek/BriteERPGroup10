@@ -31,17 +31,23 @@ public class DiscussPage extends BasePage {
     @FindBy(xpath = "//*[@title='EventsCRMManager101']")
     public WebElement message;
 
-    @FindBy(xpath = "//textarea[@xpath='1']")
+    @FindBy(xpath = "//textarea[@placeholder='Write something...']")
     public WebElement textMessage;
 
     @FindBy(xpath = "//button[@xpath='5']")
     public WebElement attachment;
 
     @FindBy(xpath = "//button[@tabindex='4']")
-    public WebElement emoji;
+    public WebElement emojiButton;
+
+    @FindBy(xpath = "//button[24]//img[1]")
+    public WebElement chooseEmoji;
 
     @FindBy(xpath = "//button[@tabindex='3']")
     public WebElement sendButton;
+
+    @FindBy(xpath = "//div[7]//div[2]//div[1]//p[1]")
+    public WebElement emojiDisplayed;
 
 }
 

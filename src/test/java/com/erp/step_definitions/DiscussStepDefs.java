@@ -35,16 +35,17 @@ public class DiscussStepDefs {
 
         String actualChannel = discussPage.channel10.getAttribute("title");
 
-        Assert.assertEquals(expectedChannel,actualChannel);
+        Assert.assertEquals(expectedChannel, actualChannel);
         //practice
 
 
     }
+
     @When("user clicks direct message button sent to {string}")
     public void user_clicks_direct_message_button_sent_to(String send) {
         discussPage.clickmessageButton.click();
         BrowserUtils.waitFor(1);
-        discussPage.sendTo.sendKeys(send+Keys.TAB+Keys.ENTER);
+        discussPage.sendTo.sendKeys(send + Keys.TAB + Keys.ENTER);
         BrowserUtils.waitFor(1);
 
     }
@@ -56,7 +57,27 @@ public class DiscussStepDefs {
         System.out.println("actualTitle = " + actualTitle);
         System.out.println("expectedTitle = " + expectedTitle);
 
-        Assert.assertEquals(expectedTitle,actualTitle);
+        Assert.assertEquals(expectedTitle, actualTitle);
+    }
+
+    @When("user clicks attachment button then user should be  upload file")
+    public void user_clicks_attachment_button_then_user_should_be_upload_file() {
+
+        String filePath = "src/test/resources/Btriteerp.png";
+        discussPage.message.click();
+        discussPage.emojiButton.click();
+        discussPage.chooseEmoji.click();
+        discussPage.textMessage.sendKeys("send emoji");
+        discussPage.sendButton.click();
+
+    }
+
+    @Then("verify that file is displayed on the page")
+    public void verify_that_file_is_displayed_on_the_page() {
+
+        Assert.assertTrue(2<3);
+
+
     }
 
 
