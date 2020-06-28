@@ -6,6 +6,7 @@ Feature: Sales Modules Behaviours
     Given user login with right "usernameSM1" and "passwordSM"
     When the user navigates to the module "Sales"
 
+    @while
   Scenario: Navigating to Sales Module
     Then the system should display the "Quotations" subtitle
 
@@ -19,5 +20,6 @@ Feature: Sales Modules Behaviours
 
     Then user get the error message "invalid"
 
-
+  Scenario: Navigates To Sales
+    Then user click the "SO126"
 

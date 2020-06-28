@@ -56,8 +56,13 @@ public class SalesStepDefs {
     public void the_system_should_display_the_subtitle(String expectedSubtitle) {
         SalesPage salesPage = new SalesPage();
         String actualPageSubTitle = salesPage.getPageSubTitle();
-        System.out.println("actualPageSubTitle = " + actualPageSubTitle);
+        //System.out.println("actualPageSubTitle = " + actualPageSubTitle);
         Assert.assertEquals("Verify the page subtitle", expectedSubtitle,actualPageSubTitle );
+        List<String> elementsText = BrowserUtils.getElementsText(salesPage.listOfQuotations);
+
+
+
+
     }
 
     @When("the user navigates to the module {string}")
@@ -76,5 +81,14 @@ public class SalesStepDefs {
 
         System.out.println("Text = "+ notificationContentText);
         System.out.println("Text = "+ notificationTitleText);
+    }
+
+    @Then("user click the {string}")
+    public void user_click_the(String string) {
+        SalesPage salesPage = new SalesPage();
+
+
+        salesPage.clickQuatationNumber(string);
+
     }
 }

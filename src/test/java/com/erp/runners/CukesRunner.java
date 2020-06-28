@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "com/erp/step_definitions",
         dryRun = false,
 
-        tags = "@wip"
+        tags = "@while"
 
 
 )
