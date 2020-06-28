@@ -2,8 +2,11 @@ package com.erp.step_definitions;
 
 import com.erp.pages.InvoicingPage;
 import com.erp.utilities.BrowserUtils;
+
 import com.erp.utilities.Driver;
 import io.cucumber.datatable.DataTable;
+
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -21,6 +24,7 @@ public class InvoicingStepDefs {
     public void the_user_navigates_to_module(String moduleName) {
         invoicingPage.navigateTo(moduleName);
 
+        BrowserUtils.waitFor(3);
     }
 
 
@@ -78,10 +82,6 @@ public class InvoicingStepDefs {
         Assert.assertEquals(fullName,actualName);
 
     }
-
-
-
-
 
 
 
