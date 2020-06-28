@@ -4,6 +4,7 @@ Feature: Sales Modules Behaviours
     Given user login with right "usernameSM1" and "passwordSM"
     When the user navigates to the module "Sales"
 
+    @while
   Scenario: Navigating to Sales Module
     Then the system should display the "Quotations" subtitle
 

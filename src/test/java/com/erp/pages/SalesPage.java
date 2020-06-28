@@ -3,6 +3,8 @@ package com.erp.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class SalesPage extends BasePage{
 
     @FindBy(css = ".btn.btn-primary.btn-sm.o_list_button_add")
@@ -32,5 +34,10 @@ public class SalesPage extends BasePage{
 
     @FindBy(css = ".o_notification_content")
     public WebElement notificationContent;
+
+    @FindBy(xpath = "//tr//td[2]")
+    public List<WebElement> listOfQuotations;
+
+
 
 }
