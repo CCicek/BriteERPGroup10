@@ -1,4 +1,6 @@
+@sales
 Feature: Sales Modules Behaviours
+
 
   Background:
     Given user login with right "usernameSM1" and "passwordSM"
@@ -7,6 +9,7 @@ Feature: Sales Modules Behaviours
     @while
   Scenario: Navigating to Sales Module
     Then the system should display the "Quotations" subtitle
+
 
   @sales
   Scenario: To create quatation/customer
@@ -17,5 +20,6 @@ Feature: Sales Modules Behaviours
 
     Then user get the error message "invalid"
 
-
+  Scenario: Navigates To Sales
+    Then user click the "SO126"
 

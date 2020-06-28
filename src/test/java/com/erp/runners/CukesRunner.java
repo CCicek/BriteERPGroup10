@@ -13,7 +13,11 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         glue = "com/erp/step_definitions",
         dryRun = false,
+<<<<<<< HEAD
         tags = "@while"
+=======
+        tags = "@website_modules"
+>>>>>>> 46b6e435fd824a021db7982bcc5b0637c2567b25
 
         )
 public class CukesRunner {

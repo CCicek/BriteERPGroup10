@@ -1,5 +1,8 @@
 package com.erp.pages;
 
+import com.erp.utilities.BrowserUtils;
+import com.erp.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -39,5 +42,25 @@ public class SalesPage extends BasePage{
     public List<WebElement> listOfQuotations;
 
 
+
+    public void clickQuatationNumber(String quatation){
+        BrowserUtils.waitFor(2);
+        List<String> elementsText = BrowserUtils.getElementsText(listOfQuotations);
+        // System.out.println("elementsText = " + elementsText);
+        while(!elementsText.contains(quatation)){
+            nextBtn.click();
+            BrowserUtils.waitFor(2);
+            List<String> elementsText1 = BrowserUtils.getElementsText(listOfQuotations);
+            System.out.println("elementsText1 = " + elementsText1);
+            if(elementsText1.contains(quatation)){
+                String xpath = "//td[contains(text(),'"+quatation+"')]";
+                Driver.get().findElement(By.xpath(xpath)).click();
+                BrowserUtils.waitFor(2);
+                break;
+            }
+
+        }
+
+    }
 
 }

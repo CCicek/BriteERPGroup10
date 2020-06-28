@@ -82,4 +82,13 @@ public class SalesStepDefs {
         System.out.println("Text = "+ notificationContentText);
         System.out.println("Text = "+ notificationTitleText);
     }
+
+    @Then("user click the {string}")
+    public void user_click_the(String string) {
+        SalesPage salesPage = new SalesPage();
+
+
+        salesPage.clickQuatationNumber(string);
+
+    }
 }
