@@ -1,4 +1,4 @@
-@sales
+
 Feature: Sales Modules Behaviours
 
 

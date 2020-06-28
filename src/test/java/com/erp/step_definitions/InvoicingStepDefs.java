@@ -2,9 +2,15 @@ package com.erp.step_definitions;
 
 import com.erp.pages.InvoicingPage;
 import com.erp.utilities.BrowserUtils;
+
+import com.erp.utilities.Driver;
+import io.cucumber.datatable.DataTable;
+
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 import java.util.List;
 import java.util.Map;
@@ -55,8 +61,27 @@ public class InvoicingStepDefs {
     }
 
 
+    @When("the user creates a new customer with the following information")
+    public void the_user_creates_a_new_customer_with_the_following_information(DataTable dataTable) {
+        Map<String, String> map = dataTable.asMap(String.class, String.class);
 
+        invoicingPage.createBtn.click();
+        BrowserUtils.waitFor(1);
+        Driver.get().switchTo().activeElement().sendKeys(map.get("fullName") + Keys.TAB
+        +map.get("address1")+Keys.TAB+map.get("address2")+Keys.TAB+map.get("city"));
 
+        invoicingPage.saveBtn.click();
+        BrowserUtils.waitFor(2);
+    }
+
+    @Then("the customer name should be displayed next to page subtitle {string}")
+    public void the_customer_name_should_be_displayed_next_to_page_subtitle(String fullName) {
+
+        String actualName = invoicingPage.createdCustomer.getText();
+        System.out.println("actualName = " + actualName);
+        Assert.assertEquals(fullName,actualName);
+
+    }
 
 
 
