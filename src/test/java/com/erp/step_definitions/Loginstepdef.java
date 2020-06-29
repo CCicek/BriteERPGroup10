@@ -15,6 +15,7 @@ public class Loginstepdef {
     @When("user login with right {string} and {string}")
     public void user_login_with_right_and(String string, String string2) {
         Driver.get().get(ConfigurationReader.get("url"));
+        Driver.get().manage().window().maximize();
         loginPage.Login(string,string2);
         loginPage.waitTheTitleContains("Inbox");
     }
