@@ -10,7 +10,6 @@ Feature: Repairs Functionality
     Given the user should click create Button
     When the user creates a new Repair Order using following info
 
-      | Product to Repair | [///] iphone 8 |
-      | Customer          | James Hollaway |
-      | Delivery Address  | DZone, UK      |
-      | Product date      | 07/02/2020     |
+      | Product to Repair | Tshirt     |
+      | Customer          | James      |
+      | Product date      | 07/02/2020 |
