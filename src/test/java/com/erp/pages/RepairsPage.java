@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class RepairsPage extends BasePage{
 
-    @FindBy(xpath = "//button[contains(@accesskey,'c')]")
+    @FindBy (xpath = "//button[contains(@accesskey,'c')]")
     public WebElement createBtn;
 
     @FindBy (xpath = "//button[.='Confirm Repair']")
@@ -55,27 +55,28 @@ public class RepairsPage extends BasePage{
     public WebElement prodInputBox;
 
 
+    public void createNewRepairsOrder(String productRepair,String customer, String productDate){
 
-    public void createNewRepairsOrder(String productRepair, String customer, String deliveryAddress, String productDate){
+        prodInputBox.click();
 
-        BrowserUtils.waitForClickablility(productInput,2);
-        productInput.click();
+        String xpath = "//li[@class='ui-menu-item']/a[contains(text(),'"+productRepair+"')]";
 
-        Driver.get().findElement(By.xpath("(//input[contains(@class,'o_input ui-autocomplete-input')])[4]")).click();
+        Driver.get().findElement(By.xpath(xpath)).click();
 
-        deliveryAddInput.sendKeys(customer+ Keys.ENTER+Keys.TAB+productDate+Keys.TAB+productDate);
+        customerInput.click();
 
-        addanItem.click();
-        BrowserUtils.waitForVisibility(prodInputBox,2);
-        prodInputBox.sendKeys(productRepair);
+        xpath = "//li[@class='ui-menu-item']/a[contains(text(),'"+customer+"')]";
 
-        createProdPopButton.click();
+        customerInput.sendKeys(xpath+Keys.ENTER);
+
+        dateInput.sendKeys(productDate);
+
+        BrowserUtils.waitFor(1);
 
         confirmBtn.click();
 
         confirmPopUpButton.click();
 
-        BrowserUtils.waitFor(1);
         saveBtn.click();
     }
 

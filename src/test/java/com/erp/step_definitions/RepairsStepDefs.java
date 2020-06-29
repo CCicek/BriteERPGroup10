@@ -20,7 +20,7 @@ public class RepairsStepDefs {
     @When("the user creates a new Repair Order using following info")
     public void the_user_creates_a_new_Repair_Order_using_following_info(Map<String,String> table) {
 
-        repairsPage.createNewRepairsOrder(table.get("Product to Repair"), table.get("Customer"),
-                table.get("Delivery Address"),table.get("Product date"));
+        repairsPage.createNewRepairsOrder(table.get("Product to Repair"),table.get("Customer"),
+                table.get("Product date"));
     }
 }
